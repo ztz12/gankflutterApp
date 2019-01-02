@@ -8,6 +8,7 @@ import 'package:gankflutter/page/home/DetailList.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gankflutter/page/home/HomeBuildRow.dart';
+import 'package:gankflutter/page/classify/WelfareBuildRows.dart';
 
 //HTTP请求的函数返回值为异步控件Future
 Future<String> get(String url) async {
@@ -68,11 +69,12 @@ Widget buildRow(context,one,showBanner,bannerData){
   if(postData.type == '福利'){
     if(showBanner){
       return buildHomeBannerRow(context, bannerData);
+    }else{
+      return buildWelfareRows(context, postData);
     }
   }else{
     return buildDetailListRow(context, postData);
   }
-  return buildExceptionIndicator("Nothing is here");
 }
 
 ///正在加载

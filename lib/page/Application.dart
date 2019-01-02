@@ -3,7 +3,7 @@ import 'package:gankflutter/page/home/IndexDrawPage.dart';
 import 'package:gankflutter/constant/GoldenConfig.dart';
 import 'package:gankflutter/page/settingCard.dart';
 import 'package:gankflutter/page/home/HomePage.dart';
-
+import 'package:gankflutter/page/classify/ClassifyPage.dart';
 
 class ApplicationPage extends StatefulWidget {
   @override
@@ -58,7 +58,7 @@ class ApplicationState extends State<ApplicationPage>{
           physics: NeverScrollableScrollPhysics(),
           controller: pageController,
 //          children: <Widget>[new ColumnWidget(),new ColumnWidget(),new ColumnWidget()],
-        children: <Widget>[HomePage(),setCard(context),setCard(context)],
+        children: <Widget>[HomePage(),ClassifyPage(),setCard(context)],
           onPageChanged: _onPageChanged,
         ),
         bottomNavigationBar: new BottomNavigationBar(
