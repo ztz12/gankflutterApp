@@ -28,7 +28,7 @@ Future<String> getCacheData(String url) async {
   } else {
     Future<String> join = get(url);
     join.then<void>((String data) {
-      ///缓存网络请求的数据
+      //缓存网络请求的数据,序列化存储
       SharePrefUtils.saveString(url, json.encode(data));
       print("-------请求网络数据");
     });
@@ -65,10 +65,15 @@ Widget buildExceptionIndicator(String message){
 }
 
 Widget buildRow(context,one,showBanner,bannerData){
+  //反序列化获取对应的对象类型数据
   PostData postData = PostData.fromJson(one);
   if(postData.type == '福利'){
     if(showBanner){
-      return buildHomeBannerRow(context, bannerData);
+      if(postData.desc == '2019-01-21') {
+        return buildHomeBannerRow(context, bannerData);
+      }else{
+        return buildDetailListRow(context, postData);
+      }
     }else{
       return buildWelfareRows(context, postData);
     }

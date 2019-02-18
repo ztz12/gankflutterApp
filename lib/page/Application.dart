@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gankflutter/page/home/IndexDrawPage.dart';
 import 'package:gankflutter/constant/GoldenConfig.dart';
-import 'package:gankflutter/page/settingCard.dart';
 import 'package:gankflutter/page/home/HomePage.dart';
 import 'package:gankflutter/page/classify/ClassifyPage.dart';
 
@@ -21,8 +20,6 @@ class ApplicationState extends State<ApplicationPage>{
         icon: Icon(Icons.home), title: new Text(GoldenConfig.homeTab)),
     new BottomNavigationBarItem(
         icon: Icon(Icons.tune), title: new Text(GoldenConfig.classType)),
-    new BottomNavigationBarItem(
-        icon: Icon(Icons.person), title: new Text(GoldenConfig.mineType))
   ];
 
   @override
@@ -49,16 +46,16 @@ class ApplicationState extends State<ApplicationPage>{
         drawer: new Drawer(
           child: new IndexDrawPage(
             name: GoldenConfig.name,
-            profileImage: "images/profile_2.jpg",
+            profileImage: "images/head.jpg",
             email: GoldenConfig.email,
-            background: "images/bg_2.jpg",
+            background: "images/girl.png",
           ),
         ),
         body: new PageView(
           physics: NeverScrollableScrollPhysics(),
           controller: pageController,
 //          children: <Widget>[new ColumnWidget(),new ColumnWidget(),new ColumnWidget()],
-        children: <Widget>[HomePage(),ClassifyPage(),setCard(context)],
+        children: <Widget>[HomePage(),ClassifyPage()],
           onPageChanged: _onPageChanged,
         ),
         bottomNavigationBar: new BottomNavigationBar(
@@ -86,9 +83,6 @@ class ApplicationState extends State<ApplicationPage>{
           break;
         case 1:
           title = GoldenConfig.classType;
-          break;
-        case 2:
-          title = GoldenConfig.mineType;
           break;
       }
     });

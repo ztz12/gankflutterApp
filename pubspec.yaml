@@ -52,10 +52,6 @@ flutter:
   assets:
       - images/home_green.png
       - images/icon_home.png
-      - images/profile.png
-      - images/bg.jpg
-      - images/bg_2.jpg
-      - images/profile_2.jpg
       - images/icon_circle.png
       - images/icon_msg.png
       - images/icon_sina.png
@@ -64,6 +60,8 @@ flutter:
       - images/smile.png
       - images/empty_data.png
       - images/loading.png
+      - images/girl.png
+      - images/head.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
